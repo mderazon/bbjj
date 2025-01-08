@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Bebas_Neue } from "next/font/google";
 const bebasNeue = Bebas_Neue({
   weight: "400",
@@ -24,6 +24,18 @@ import {
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const scrollToSection = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>) => {
+      e.preventDefault();
+      const href = e.currentTarget.getAttribute("href");
+      if (!href?.startsWith("#")) return;
+      const element = document.querySelector(href);
+      element?.scrollIntoView({ behavior: "smooth" });
+      setIsMenuOpen(false);
+    },
+    []
+  );
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -50,21 +62,29 @@ export default function Home() {
 
             <ul
               className={`
-            md:flex md:space-x-8 md:items-center
-            ${isMenuOpen ? "block" : "hidden"}
-            absolute md:relative
-            top-16 md:top-0
-            left-0 md:left-auto
-            right-0 md:right-auto
-            bg-gray-50 md:bg-transparent
-            p-4 md:p-0
-            shadow-md md:shadow-none
-            z-50
-          `}
+  md:flex md:space-x-8 md:items-center
+  ${
+    isMenuOpen
+      ? "opacity-100 max-h-[400px] translate-y-0"
+      : "opacity-0 max-h-0 -translate-y-2 pointer-events-none md:pointer-events-auto"
+  }
+  absolute md:relative
+  top-16 md:top-0
+  left-0 md:left-auto
+  right-0 md:right-auto
+  bg-gray-50 md:bg-transparent
+  p-4 md:p-0
+  shadow-md md:shadow-none
+  z-50
+  transition-all duration-300 ease-in-out
+  overflow-hidden
+  md:transform-none md:opacity-100 md:max-h-full
+`}
             >
               <li>
                 <a
                   href="#home"
+                  onClick={scrollToSection}
                   className="block py-2 md:py-0 text-gray-700 hover:text-blue-600 text-lg font-medium transition-colors duration-200"
                 >
                   Home
@@ -72,7 +92,17 @@ export default function Home() {
               </li>
               <li>
                 <a
+                  href="#about"
+                  onClick={scrollToSection}
+                  className="block py-2 md:py-0 text-gray-700 hover:text-blue-600 text-lg font-medium transition-colors duration-200"
+                >
+                  About
+                </a>
+              </li>
+              <li>
+                <a
                   href="#testimonials"
+                  onClick={scrollToSection}
                   className="block py-2 md:py-0 text-gray-700 hover:text-blue-600 text-lg font-medium transition-colors duration-200"
                 >
                   Testimonials
@@ -81,6 +111,7 @@ export default function Home() {
               <li>
                 <a
                   href="#schedule"
+                  onClick={scrollToSection}
                   className="block py-2 md:py-0 text-gray-700 hover:text-blue-600 text-lg font-medium transition-colors duration-200"
                 >
                   Schedule
@@ -89,6 +120,7 @@ export default function Home() {
               <li>
                 <a
                   href="#instructor"
+                  onClick={scrollToSection}
                   className="block py-2 md:py-0 text-gray-700 hover:text-blue-600 text-lg font-medium transition-colors duration-200"
                 >
                   Instructor
@@ -97,6 +129,7 @@ export default function Home() {
               <li>
                 <a
                   href="#contact"
+                  onClick={scrollToSection}
                   className="block py-2 md:py-0 text-gray-700 hover:text-blue-600 text-lg font-medium transition-colors duration-200"
                 >
                   Contact
@@ -111,7 +144,7 @@ export default function Home() {
         {/* Hero Section */}
         <section
           id="home"
-          className="relative h-screen flex items-center justify-center text-white overflow-hidden"
+          className="scroll-mt-16 relative h-screen flex items-center justify-center text-white overflow-hidden"
         >
           {heroImages.map((image, index) => (
             <Image
@@ -143,7 +176,7 @@ export default function Home() {
           </div>
         </section>
         {/* About Us Section */}
-        <section id="about" className="py-16 bg-gray-50">
+        <section id="about" className="scroll-mt-16 py-16 bg-gray-50">
           <div className="container mx-auto px-6">
             <h2 className="text-3xl font-bold text-center mb-8">Our Story</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -167,7 +200,7 @@ export default function Home() {
           </div>
         </section>
         {/* Testimonials Section */}
-        <section id="testimonials" className="py-16 bg-white">
+        <section id="testimonials" className="scroll-mt-16 py-16 bg-white">
           <div className="container mx-auto px-6">
             <h2 className="text-3xl font-bold text-center mb-8">
               What Our Students Say
@@ -189,7 +222,7 @@ export default function Home() {
         </section>
 
         {/* Class Schedule Section */}
-        <section id="schedule" className="py-16 bg-gray-100">
+        <section id="schedule" className="scroll-mt-16 py-16 bg-gray-100">
           <div className="container mx-auto px-6">
             <h2 className="text-3xl font-bold text-center mb-8">
               Class Schedule
@@ -244,7 +277,7 @@ export default function Home() {
         </section>
 
         {/* Instructor Bio Section */}
-        <section id="instructor" className="py-16 bg-white">
+        <section id="instructor" className="scroll-mt-16 py-16 bg-white">
           <div className="container mx-auto px-6">
             <h2 className="text-3xl font-bold text-center mb-8">
               Meet Your Instructor
@@ -289,7 +322,7 @@ export default function Home() {
         </section>
 
         {/* Contact/Location Section */}
-        <section id="contact" className="py-16 bg-gray-100">
+        <section id="contact" className="scroll-mt-16 py-16 bg-gray-100">
           <div className="container mx-auto px-6">
             <h2 className="text-3xl font-bold text-center mb-8">Contact Us</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
