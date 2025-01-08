@@ -273,19 +273,15 @@ export default function Home() {
                   </ul>
                 </CardContent>
               </Card>
-              <Card>
-                <CardContent className="p-6">
-                  <h3 className="text-2xl font-semibold mb-4">Location</h3>
-                  <div className="aspect-w-16 aspect-h-9">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6346.166116675269!2d-8.7945153!3d37.31686020000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1b15000fcdcf6d%3A0x8f0130e9d9a74903!2sBear%20Bones%20Jiujitsu!5e0!3m2!1sen!2sus!4v1736339573349!5m2!1sen!2sus"
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      allowFullScreen={true}
-                      loading="lazy"
-                    ></iframe>
-                  </div>
+              <Card className="overflow-hidden h-[300px]">
+                <CardContent className="p-0 h-full">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6346.166116675269!2d-8.7945153!3d37.31686020000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1b15000fcdcf6d%3A0x8f0130e9d9a74903!2sBear%20Bones%20Jiujitsu!5e0!3m2!1sen!2sus!4v1736339573349!5m2!1sen!2sus"
+                    className="w-full h-full"
+                    style={{ border: 0 }}
+                    allowFullScreen={true}
+                    loading="lazy"
+                  ></iframe>
                 </CardContent>
               </Card>
             </div>
