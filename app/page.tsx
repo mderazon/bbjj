@@ -14,7 +14,7 @@ const heroImages = [
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { MapPin, Phone, Mail, Clock, User } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, User, Menu, X } from "lucide-react";
 import {
   SiFacebook,
   SiInstagram,
@@ -23,6 +23,7 @@ import {
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -34,49 +35,75 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-100">
       <header className="bg-gray-50 shadow-md">
-        <nav className="container mx-auto px-8 py-4">
-          <ul className="flex justify-center space-x-8">
-            <li>
-              <a
-                href="#home"
-                className="text-gray-700 hover:text-blue-600 text-lg font-medium transition-colors duration-200"
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href="#testimonials"
-                className="text-gray-700 hover:text-blue-600 text-lg font-medium transition-colors duration-200"
-              >
-                Testimonials
-              </a>
-            </li>
-            <li>
-              <a
-                href="#schedule"
-                className="text-gray-700 hover:text-blue-600 text-lg font-medium transition-colors duration-200"
-              >
-                Schedule
-              </a>
-            </li>
-            <li>
-              <a
-                href="#instructor"
-                className="text-gray-700 hover:text-blue-600 text-lg font-medium transition-colors duration-200"
-              >
-                Instructor
-              </a>
-            </li>
-            <li>
-              <a
-                href="#contact"
-                className="text-gray-700 hover:text-blue-600 text-lg font-medium transition-colors duration-200"
-              >
-                Contact
-              </a>
-            </li>
-          </ul>
+        <nav className="container mx-auto px-4">
+          <div className="flex justify-between items-center py-4">
+            <button
+              className="md:hidden"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
+            </button>
+
+            <ul
+              className={`
+            md:flex md:space-x-8 md:items-center
+            ${isMenuOpen ? "block" : "hidden"}
+            absolute md:relative
+            top-16 md:top-0
+            left-0 md:left-auto
+            right-0 md:right-auto
+            bg-gray-50 md:bg-transparent
+            p-4 md:p-0
+            shadow-md md:shadow-none
+            z-50
+          `}
+            >
+              <li>
+                <a
+                  href="#home"
+                  className="block py-2 md:py-0 text-gray-700 hover:text-blue-600 text-lg font-medium transition-colors duration-200"
+                >
+                  Home
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#testimonials"
+                  className="block py-2 md:py-0 text-gray-700 hover:text-blue-600 text-lg font-medium transition-colors duration-200"
+                >
+                  Testimonials
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#schedule"
+                  className="block py-2 md:py-0 text-gray-700 hover:text-blue-600 text-lg font-medium transition-colors duration-200"
+                >
+                  Schedule
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#instructor"
+                  className="block py-2 md:py-0 text-gray-700 hover:text-blue-600 text-lg font-medium transition-colors duration-200"
+                >
+                  Instructor
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  className="block py-2 md:py-0 text-gray-700 hover:text-blue-600 text-lg font-medium transition-colors duration-200"
+                >
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
         </nav>
       </header>
 
