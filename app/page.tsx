@@ -1,3 +1,16 @@
+"use client";
+import { useState, useEffect } from "react";
+import { Bebas_Neue } from "next/font/google";
+const bebasNeue = Bebas_Neue({
+  weight: "400",
+  subsets: ["latin"],
+});
+const heroImages = [
+  { src: "/academy1.jpg", alt: "Jiujitsu academy Image 1" },
+  { src: "/academy2.jpg", alt: "Jiujitsu academy Image 2" },
+  { src: "/academy3.jpg", alt: "Jiujitsu academy Image 3" },
+  { src: "/academy4.jpg", alt: "Jiujitsu academy Image 4" },
+];
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -9,6 +22,15 @@ import {
 } from "@icons-pack/react-simple-icons";
 
 export default function Home() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(timer);
+  }, []);
   return (
     <div className="min-h-screen bg-gray-100">
       <header className="bg-gray-50 shadow-md">
@@ -62,17 +84,24 @@ export default function Home() {
         {/* Hero Section */}
         <section
           id="home"
-          className="relative h-screen flex items-center justify-center text-white"
+          className="relative h-screen flex items-center justify-center text-white overflow-hidden"
         >
-          <Image
-            src="/placeholder.svg?height=1080&width=1920"
-            alt="Jiujitsu Hero Image"
-            layout="fill"
-            objectFit="cover"
-            className="absolute z-0"
-          />
+          {heroImages.map((image, index) => (
+            <Image
+              key={index}
+              src={image.src}
+              alt={image.alt}
+              layout="fill"
+              objectFit="cover"
+              className={`absolute z-0 transition-opacity duration-1000 ${
+                currentSlide === index ? "opacity-100" : "opacity-0"
+              }`}
+            />
+          ))}
           <div className="relative z-10 text-center">
-            <h1 className="text-5xl font-bold mb-4">Bear Bones Jiujitsu</h1>
+            <h1 className={`${bebasNeue.className} text-5xl font-bold mb-4`}>
+              Bear Bones Jiujitsu
+            </h1>
             <Image
               src="/logo.png"
               alt="Logo"
@@ -83,10 +112,33 @@ export default function Home() {
             <p className="text-2xl mb-8">
               Master the Fundamentals. Unleash Your Potential.
             </p>
-            <Button size="lg">Sign Up for a Free Trial</Button>
+            <Button size="lg">Pick your first free class</Button>
           </div>
         </section>
-
+        {/* About Us Section */}
+        <section id="about" className="py-16 bg-gray-50">
+          <div className="container mx-auto px-6">
+            <h2 className="text-3xl font-bold text-center mb-8">Our Story</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div className="prose lg:prose-xl text-gray-700">
+                Nestled in the heart of Aljezur, a charming town on the stunning
+                Costa Vicentina in the Algarve, you'll find Bear Bones Jiujitsu.
+                Surrounded by breathtaking beaches and lush landscapes, our
+                academy provides a unique and inspiring environment to learn and
+                grow in the art of Brazilian Jiu-Jitsu.
+              </div>
+              <div className="flex justify-center">
+                <Image
+                  src="/aljezur.jpg"
+                  alt="Aljezur, Portugal"
+                  width={700}
+                  height={450}
+                  className="rounded-lg shadow-lg object-cover w-full"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
         {/* Testimonials Section */}
         <section id="testimonials" className="py-16 bg-white">
           <div className="container mx-auto px-6">
