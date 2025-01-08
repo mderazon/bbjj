@@ -11,37 +11,46 @@ import {
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-100">
-      <header className="bg-white shadow-md">
-        <nav className="container mx-auto px-6 py-3">
-          <ul className="flex justify-center space-x-6">
+      <header className="bg-gray-50 shadow-md">
+        <nav className="container mx-auto px-8 py-4">
+          <ul className="flex justify-center space-x-8">
             <li>
-              <a href="#home" className="text-gray-700 hover:text-blue-600">
+              <a
+                href="#home"
+                className="text-gray-700 hover:text-blue-600 text-lg font-medium transition-colors duration-200"
+              >
                 Home
               </a>
             </li>
             <li>
               <a
                 href="#testimonials"
-                className="text-gray-700 hover:text-blue-600"
+                className="text-gray-700 hover:text-blue-600 text-lg font-medium transition-colors duration-200"
               >
                 Testimonials
               </a>
             </li>
             <li>
-              <a href="#schedule" className="text-gray-700 hover:text-blue-600">
+              <a
+                href="#schedule"
+                className="text-gray-700 hover:text-blue-600 text-lg font-medium transition-colors duration-200"
+              >
                 Schedule
               </a>
             </li>
             <li>
               <a
                 href="#instructor"
-                className="text-gray-700 hover:text-blue-600"
+                className="text-gray-700 hover:text-blue-600 text-lg font-medium transition-colors duration-200"
               >
                 Instructor
               </a>
             </li>
             <li>
-              <a href="#contact" className="text-gray-700 hover:text-blue-600">
+              <a
+                href="#contact"
+                className="text-gray-700 hover:text-blue-600 text-lg font-medium transition-colors duration-200"
+              >
                 Contact
               </a>
             </li>
