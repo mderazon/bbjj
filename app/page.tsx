@@ -64,6 +64,13 @@ export default function Home() {
           />
           <div className="relative z-10 text-center">
             <h1 className="text-5xl font-bold mb-4">Bear Bones Jiujitsu</h1>
+            <Image
+              src="/logo.png"
+              alt="Logo"
+              width={150}
+              height={150}
+              className="mx-auto mb-4"
+            />
             <p className="text-2xl mb-8">
               Master the Fundamentals. Unleash Your Potential.
             </p>
@@ -102,42 +109,44 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <Card>
                 <CardContent className="p-6">
-                  <h3 className="text-2xl font-semibold mb-4 text-blue-600">
+                  <h3 className="text-2xl font-semibold mb-2 text-blue-600">
                     Adults Classes
                   </h3>
+                  <p className="text-sm text-gray-600 mb-4">
+                    All classes are 90 minutes long
+                  </p>
                   <ul className="space-y-2">
                     <li className="flex items-center">
-                      <Clock className="mr-2" size={20} /> Mon, Wed, Fri: 7:00
-                      PM - 8:30 PM
+                      <Clock className="mr-2" size={20} /> Mon-Thu: 6:30 PM (Gi)
                     </li>
                     <li className="flex items-center">
-                      <Clock className="mr-2" size={20} /> Tue, Thu: 6:30 PM -
-                      8:00 PM
-                    </li>
-                    <li className="flex items-center">
-                      <Clock className="mr-2" size={20} /> Sat: 10:00 AM - 11:30
-                      AM
+                      <Clock className="mr-2" size={20} /> Fri: 6:00 PM (No-Gi)
                     </li>
                   </ul>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent className="p-6">
-                  <h3 className="text-2xl font-semibold mb-4 text-green-600">
+                  <h3 className="text-2xl font-semibold mb-2 text-green-600">
                     Little Bears Kids Classes
                   </h3>
+                  <p className="text-sm text-gray-600 mb-4">
+                    All classes are 60 minutes long
+                  </p>
                   <ul className="space-y-2">
                     <li className="flex items-center">
-                      <Clock className="mr-2" size={20} /> Mon, Wed, Fri: 4:30
-                      PM - 5:30 PM
+                      <Clock className="mr-2" size={20} /> Mon, Tue, Thu: 4:00
+                      PM
                     </li>
                     <li className="flex items-center">
-                      <Clock className="mr-2" size={20} /> Tue, Thu: 4:00 PM -
-                      5:00 PM
+                      <Clock className="mr-2" size={20} /> Mon, Tue, Thu: 5:00
+                      PM
                     </li>
                     <li className="flex items-center">
-                      <Clock className="mr-2" size={20} /> Sat: 9:00 AM - 10:00
-                      AM
+                      <Clock className="mr-2" size={20} /> Wed: 5:30 PM
+                    </li>
+                    <li className="flex items-center">
+                      <Clock className="mr-2" size={20} /> Fri: 5:00 PM
                     </li>
                   </ul>
                 </CardContent>
