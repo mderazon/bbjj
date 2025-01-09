@@ -14,7 +14,19 @@ const heroImages = [
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { MapPin, Phone, Mail, Clock, User, Menu, X } from "lucide-react";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  User,
+  Menu,
+  X,
+  Heart,
+  Brain,
+  BarChart2,
+  Users,
+} from "lucide-react";
 import {
   SiFacebook,
   SiInstagram,
@@ -184,11 +196,33 @@ export default function Home() {
             <h2 className="text-3xl font-bold text-center mb-8">Our Story</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div className="prose lg:prose-xl text-gray-700">
-                Nestled in the heart of Aljezur, a charming town on the stunning
-                Costa Vicentina in the Algarve, you'll find Bear Bones Jiujitsu.
-                Surrounded by breathtaking beaches and lush landscapes, our
-                academy provides a unique and inspiring environment to learn and
-                grow in the art of Brazilian Jiu-Jitsu.
+                <p>
+                  Nestled in the heart of Aljezur, a charming town on the
+                  Algarve coast, you'll find Bear Bones Jiujitsu. Our academy
+                  provides a unique and inspiring environment to learn and grow
+                  in the art of Brazilian Jiu-Jitsu.
+                </p>
+                <p className="mb-8">
+                  Training BJJ offers more than just self-defense skills.
+                </p>
+                <ul className="grid grid-cols-4 gap-8 mt-8">
+                  <li className="flex flex-col items-center text-center">
+                    <Heart className="h-8 w-8 mb-2" />
+                    <strong>Physical Fitness</strong>
+                  </li>
+                  <li className="flex flex-col items-center text-center">
+                    <Brain className="h-8 w-8 mb-2" />
+                    <strong>Mental Well-being</strong>
+                  </li>
+                  <li className="flex flex-col items-center text-center">
+                    <BarChart2 className="h-8 w-8 mb-2" />
+                    <strong>Personal Growth</strong>
+                  </li>
+                  <li className="flex flex-col items-center text-center">
+                    <Users className="h-8 w-8 mb-2" />
+                    <strong>Community</strong>
+                  </li>
+                </ul>
               </div>
               <div className="flex justify-center">
                 <Image
