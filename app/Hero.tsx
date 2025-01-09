@@ -1,24 +1,33 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Bebas_Neue } from "next/font/google";
+
 const bebasNeue = Bebas_Neue({
   weight: "400",
   subsets: ["latin"],
 });
 
-interface HeroImage {
-  src: string;
-  alt: string;
-}
+const heroImages = [
+  { src: "/academy1.jpg", alt: "Jiujitsu academy Image 1" },
+  { src: "/academy2.jpg", alt: "Jiujitsu academy Image 2" },
+  { src: "/academy3.jpg", alt: "Jiujitsu academy Image 3" },
+  { src: "/academy4.jpg", alt: "Jiujitsu academy Image 4" },
+];
 
-interface HeroProps {
-  heroImages: HeroImage[];
-  currentSlide: number;
-}
+const Hero = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-const Hero = ({ heroImages, currentSlide }: HeroProps) => {
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section
       id="home"
@@ -52,7 +61,7 @@ const Hero = ({ heroImages, currentSlide }: HeroProps) => {
         <p className="text-2xl mb-8">
           Master the Fundamentals. Unleash Your Potential.
         </p>
-        <Button size="lg">Pick your first free class</Button>
+        <Button size="lg">Start your free trial</Button>
       </div>
     </section>
   );
