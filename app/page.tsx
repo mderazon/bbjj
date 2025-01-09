@@ -146,6 +146,15 @@ export default function Home() {
           id="home"
           className="scroll-mt-16 relative h-screen flex items-center justify-center text-white overflow-hidden"
         >
+          <div className="absolute top-8 left-8 z-20">
+            <Image
+              src="/logo.png"
+              alt="Logo"
+              width={120}
+              height={120}
+              className="hover:opacity-90 transition-opacity duration-200"
+            />
+          </div>
           {heroImages.map((image, index) => (
             <Image
               key={index}
@@ -162,13 +171,7 @@ export default function Home() {
             <h1 className={`${bebasNeue.className} text-5xl font-bold mb-4`}>
               Bear Bones Jiujitsu
             </h1>
-            <Image
-              src="/logo.png"
-              alt="Logo"
-              width={150}
-              height={150}
-              className="mx-auto mb-4"
-            />
+
             <p className="text-2xl mb-8">
               Master the Fundamentals. Unleash Your Potential.
             </p>
