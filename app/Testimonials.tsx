@@ -15,23 +15,58 @@ export default function Testimonials() {
           What Our Students Say
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {[1, 2, 3].map((i) => (
-            <article key={i}>
-              <Card>
-                <CardContent className="p-6">
-                  <blockquote className="text-gray-600 mb-4">
-                    <p>
-                      "Bear Bones Jiujitsu has transformed my life. The
-                      instructors are top-notch and the community is amazing!"
-                    </p>
-                  </blockquote>
-                  <cite className="font-semibold text-gray-900">
-                    - Happy Student {i}
-                  </cite>
-                </CardContent>
-              </Card>
-            </article>
-          ))}
+          <article>
+            <Card>
+              <CardContent className="p-6">
+                <blockquote className="text-gray-600 mb-4">
+                  <p>
+                    "Incredible Jiu-Jitsu training! The coach's detailed
+                    instruction and the well-structured classes are fantastic.
+                    Plus, it's the most welcoming and respectful academy I've
+                    ever been to."
+                  </p>
+                </blockquote>
+                <cite className="font-semibold text-gray-900">
+                  - Elena, Blue Belt
+                </cite>
+              </CardContent>
+            </Card>
+          </article>
+          <article>
+            <Card>
+              <CardContent className="p-6">
+                <blockquote className="text-gray-600 mb-4">
+                  <p>
+                    "My son has thrived under Scotty's expert instruction and
+                    the supportive atmosphere. I highly recommend Bear Bones to
+                    any parent looking for a positive and enriching experience
+                    for their child."
+                  </p>
+                </blockquote>
+                <cite className="font-semibold text-gray-900">
+                  - Sunny, a happy mom
+                </cite>
+              </CardContent>
+            </Card>
+          </article>
+          <article>
+            <Card>
+              <CardContent className="p-6">
+                <blockquote className="text-gray-600 mb-4">
+                  <p>
+                    "After 20 years in Jiu-Jitsu, across many countries and
+                    academies, Bear Bones is a rare diamond - my favorite, in
+                    fact. Scotty is the best instructor I've had. His attention
+                    to detail has rapidly improved my game. The kids' classes
+                    are also phenomenal. Highly recommended!"
+                  </p>
+                </blockquote>
+                <cite className="font-semibold text-gray-900">
+                  - Leo, Purple Belt
+                </cite>
+              </CardContent>
+            </Card>
+          </article>
         </div>
       </div>
     </section>
