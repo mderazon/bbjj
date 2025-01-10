@@ -15,9 +15,9 @@ export default function Testimonials() {
           What Our Students Say
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <article>
-            <Card>
-              <CardContent className="p-6">
+          <article className="flex flex-col h-full">
+            <Card className="h-full flex flex-col">
+              <CardContent className="p-6 flex flex-col justify-between flex-1">
                 <blockquote className="text-gray-600 mb-4">
                   <p>
                     "Incredible Jiu-Jitsu training! The coach's detailed
@@ -26,15 +26,15 @@ export default function Testimonials() {
                     ever been to."
                   </p>
                 </blockquote>
-                <cite className="font-semibold text-gray-900">
+                <cite className="font-semibold text-gray-900 mt-auto">
                   - Elena, Blue Belt
                 </cite>
               </CardContent>
             </Card>
           </article>
-          <article>
-            <Card>
-              <CardContent className="p-6">
+          <article className="flex flex-col h-full">
+            <Card className="h-full flex flex-col">
+              <CardContent className="p-6 flex flex-col justify-between flex-1">
                 <blockquote className="text-gray-600 mb-4">
                   <p>
                     "My son has thrived under Scotty's expert instruction and
@@ -43,15 +43,15 @@ export default function Testimonials() {
                     for their child."
                   </p>
                 </blockquote>
-                <cite className="font-semibold text-gray-900">
+                <cite className="font-semibold text-gray-900 mt-auto">
                   - Sunny, a happy mom
                 </cite>
               </CardContent>
             </Card>
           </article>
-          <article>
-            <Card>
-              <CardContent className="p-6">
+          <article className="flex flex-col h-full">
+            <Card className="h-full flex flex-col">
+              <CardContent className="p-6 flex flex-col justify-between flex-1">
                 <blockquote className="text-gray-600 mb-4">
                   <p>
                     "After 20 years in Jiu-Jitsu, across many countries and
@@ -61,7 +61,7 @@ export default function Testimonials() {
                     are also phenomenal. Highly recommended!"
                   </p>
                 </blockquote>
-                <cite className="font-semibold text-gray-900">
+                <cite className="font-semibold text-gray-900 mt-auto">
                   - Leo, Purple Belt
                 </cite>
               </CardContent>
