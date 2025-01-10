@@ -17,16 +17,22 @@ const heroImages = [
   { src: "/academy4.jpg", alt: "Jiujitsu academy Image 4" },
 ];
 
-const Hero = () => {
+const useHeroSlider = (totalSlides: number) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
-    }, 5000); // Change slide every 5 seconds
+    const interval = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % totalSlides);
+    }, 3000);
 
-    return () => clearInterval(timer);
-  }, []);
+    return () => clearInterval(interval);
+  }, [totalSlides]);
+
+  return currentSlide;
+};
+
+const Hero = () => {
+  const currentSlide = useHeroSlider(heroImages.length);
 
   return (
     <section
@@ -47,8 +53,8 @@ const Hero = () => {
           key={index}
           src={image.src}
           alt={image.alt}
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{ objectFit: "cover" }}
           className={`absolute z-0 transition-opacity duration-1000 ${
             currentSlide === index ? "opacity-100" : "opacity-0"
           }`}
