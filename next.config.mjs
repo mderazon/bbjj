@@ -17,6 +17,7 @@ const nextConfig = {
   images: {
     loader: "custom",
     loaderFile: "./lib/imageLoader.ts",
+    domains: ["www.bearbonesjiujitsu.com"],
   },
   experimental: {
     webpackBuildWorker: true,
