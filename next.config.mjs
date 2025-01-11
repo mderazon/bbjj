@@ -15,7 +15,8 @@ const nextConfig = {
   },
   output: "export",
   images: {
-    unoptimized: true,
+    loader: "custom",
+    loaderFile: "./lib/imageLoader.ts",
   },
   experimental: {
     webpackBuildWorker: true,

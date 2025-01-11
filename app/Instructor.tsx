@@ -19,12 +19,13 @@ export default function Instructor() {
         <div className="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-8">
           <figure className="flex-shrink-0">
             <Image
-              src="/scotty.jpg?height=300&width=300"
+              src="/scotty.jpg"
               alt="Scotty Braggins"
               width={300}
               height={300}
               className="rounded-full"
-              loading="lazy"
+              priority={false}
+              quality={75}
             />
             <figcaption className="sr-only">Scotty Braggins</figcaption>
           </figure>
