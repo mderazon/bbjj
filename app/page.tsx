@@ -20,7 +20,6 @@ export default function Home() {
         <Instructor />
         <Contact />
       </main>
-
       <Footer />
     </div>
   );
