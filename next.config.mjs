@@ -14,11 +14,14 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   output: "export",
-  images: {
-    loader: "custom",
-    loaderFile: "./lib/imageLoader.ts",
-    domains: ["bearbonesjiujitsu.com"],
-  },
+  images:
+    process.env.NODE_ENV === "development"
+      ? { loader: "default", unoptimized: true }
+      : {
+          loader: "custom",
+          loaderFile: "./lib/imageLoader.ts",
+          domains: ["bearbonesjiujitsu.com"],
+        },
   experimental: {
     webpackBuildWorker: true,
     parallelServerBuildTraces: true,

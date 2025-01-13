@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Bebas_Neue } from "next/font/google";
+import Link from "next/link";
 
 const bebasNeue = Bebas_Neue({
   weight: "400",
@@ -67,7 +68,11 @@ const Hero = () => {
         <p className="text-2xl mb-8">
           Master the Fundamentals. Unleash Your Potential.
         </p>
-        <Button size="lg">Start your free trial</Button>
+        <Button size="lg" asChild>
+          <Link href="#schedule" scroll={true} className="scroll-smooth">
+            Start your free trial
+          </Link>
+        </Button>
       </div>
     </section>
   );

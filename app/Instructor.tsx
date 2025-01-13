@@ -26,6 +26,7 @@ export default function Instructor() {
               className="rounded-full"
               priority={false}
               quality={75}
+              sizes="300px"
             />
             <figcaption className="sr-only">Scotty Braggins</figcaption>
           </figure>
