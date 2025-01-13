@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Bebas_Neue } from "next/font/google";
 import Link from "next/link";
+import { useScrollToSection } from "../hooks/use-scroll-to-section";
 
 const bebasNeue = Bebas_Neue({
   weight: "400",
@@ -34,7 +35,7 @@ const useHeroSlider = (totalSlides: number) => {
 
 const Hero = () => {
   const currentSlide = useHeroSlider(heroImages.length);
-
+  const scrollToSection = useScrollToSection();
   return (
     <section
       id="home"
@@ -69,7 +70,11 @@ const Hero = () => {
           Master the Fundamentals. Unleash Your Potential.
         </p>
         <Button size="lg" asChild>
-          <Link href="#schedule" scroll={true} className="scroll-smooth">
+          <Link
+            href="#schedule"
+            onClick={scrollToSection}
+            className="scroll-smooth"
+          >
             Start your free trial
           </Link>
         </Button>

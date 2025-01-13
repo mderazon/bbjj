@@ -1,19 +1,14 @@
 import { useState, useCallback } from "react";
 import { Menu, X } from "lucide-react";
+import { useScrollToSection } from "../hooks/use-scroll-to-section";
+
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const scrollToSection = useCallback(
-    (e: React.MouseEvent<HTMLAnchorElement>) => {
-      e.preventDefault();
-      const href = e.currentTarget.getAttribute("href");
-      if (!href?.startsWith("#")) return;
-      const element = document.querySelector(href);
-      element?.scrollIntoView({ behavior: "smooth" });
-      setIsMenuOpen(false);
-    },
-    []
-  );
+  const scrollToSection = useScrollToSection({
+    onScrollComplete: () => setIsMenuOpen(false),
+  });
+
   return (
     <header className="bg-gray-50 shadow-md">
       <nav className="container mx-auto px-4">

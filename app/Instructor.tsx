@@ -26,7 +26,10 @@ export default function Instructor() {
               className="rounded-full"
               priority={false}
               quality={75}
-              sizes="300px"
+              style={{
+                width: "300px",
+                height: "auto",
+              }}
             />
             <figcaption className="sr-only">Scotty Braggins</figcaption>
           </figure>
