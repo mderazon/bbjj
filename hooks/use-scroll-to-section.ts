@@ -12,6 +12,7 @@ export const useScrollToSection = ({
       e.preventDefault();
       const href = e.currentTarget.getAttribute("href");
       if (!href?.startsWith("#")) return;
+      window.history.pushState({}, "", href);
       const element = document.querySelector(href);
       element?.scrollIntoView({ behavior: "smooth" });
       onScrollComplete?.();
