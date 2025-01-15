@@ -39,6 +39,22 @@ export default function Schedule() {
                     aria-hidden="true"
                     size={20}
                   />{" "}
+                  <span className="text-gray-900">Wed: 11:00 AM (Gi)</span>
+                </li>
+                <li className="flex items-center">
+                  <Clock
+                    className="mr-2 text-gray-900"
+                    aria-hidden="true"
+                    size={20}
+                  />{" "}
+                  <span className="text-gray-900">Fri: 11:00 AM (Gi)</span>
+                </li>
+                <li className="flex items-center">
+                  <Clock
+                    className="mr-2 text-gray-900"
+                    aria-hidden="true"
+                    size={20}
+                  />{" "}
                   <span className="text-gray-900">Fri: 6:00 PM (No-Gi)</span>
                 </li>
               </ul>
