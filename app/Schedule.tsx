@@ -75,7 +75,9 @@ export default function Schedule() {
                     aria-hidden="true"
                     size={20}
                   />{" "}
-                  <span className="text-gray-900">Mon, Tue, Thu: 4:00 PM</span>
+                  <span className="text-gray-900">
+                    Mon: 4:00 PM, 5:00 PM (All Ages)
+                  </span>
                 </li>
                 <li className="flex items-center">
                   <Clock
@@ -83,7 +85,9 @@ export default function Schedule() {
                     aria-hidden="true"
                     size={20}
                   />{" "}
-                  <span className="text-gray-900">Mon, Tue, Thu: 5:00 PM</span>
+                  <span className="text-gray-900">
+                    Tue: 4:00 PM (5–9 years old), 5:00 PM (10+)
+                  </span>
                 </li>
                 <li className="flex items-center">
                   <Clock
@@ -91,7 +95,7 @@ export default function Schedule() {
                     aria-hidden="true"
                     size={20}
                   />{" "}
-                  <span className="text-gray-900">Wed: 5:30 PM</span>
+                  <span className="text-gray-900">Wed: 5:30 PM (All Ages)</span>
                 </li>
                 <li className="flex items-center">
                   <Clock
@@ -99,7 +103,17 @@ export default function Schedule() {
                     aria-hidden="true"
                     size={20}
                   />{" "}
-                  <span className="text-gray-900">Fri: 5:00 PM</span>
+                  <span className="text-gray-900">
+                    Thu: 4:00 PM, 5:00 PM (All Ages)
+                  </span>
+                </li>
+                <li className="flex items-center">
+                  <Clock
+                    className="mr-2 text-gray-900"
+                    aria-hidden="true"
+                    size={20}
+                  />{" "}
+                  <span className="text-gray-900">Fri: 5:00 PM (All Ages)</span>
                 </li>
               </ul>
             </CardContent>
