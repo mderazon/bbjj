@@ -17,7 +17,7 @@ export default function Instructor() {
           Meet Your Instructor
         </h2>
         <div className="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-8">
-          <figure className="flex-shrink-0">
+          <figure className="shrink-0">
             <Image
               src="/scotty.jpg"
               alt="Scotty Braggins"

@@ -12,7 +12,7 @@ const About: React.FC = () => {
   return (
     <section
       id="about"
-      className="scroll-mt-16 py-16 bg-gradient-to-b from-white to-gray-50"
+      className="scroll-mt-16 py-16 bg-linear-to-b from-white to-gray-50"
       aria-labelledby="about-heading"
     >
       <div className="container mx-auto px-6">
