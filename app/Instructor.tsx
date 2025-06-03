@@ -23,13 +23,10 @@ export default function Instructor() {
               alt="Scotty Braggins"
               width={300}
               height={300}
-              className="rounded-full"
+              className="rounded-full w-60 h-auto md:w-[300px] md:h-auto"
               priority={false}
               quality={75}
-              style={{
-                width: "300px",
-                height: "auto",
-              }}
+              sizes="(max-width: 767px) 240px, 300px"
             />
             <figcaption className="sr-only">Scotty Braggins</figcaption>
           </figure>
