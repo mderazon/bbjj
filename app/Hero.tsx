@@ -56,6 +56,7 @@ const Hero = () => {
           src={image.src}
           alt={image.alt}
           fill
+          priority={index === 0}
           style={{ objectFit: "cover" }}
           className={`absolute z-0 transition-opacity duration-1000 ${
             currentSlide === index ? "opacity-100" : "opacity-0"

@@ -27,6 +27,7 @@ export default function Instructor() {
               priority={false}
               quality={75}
               sizes="(max-width: 767px) 240px, 300px"
+              style={{ height: "auto" }}
             />
             <figcaption className="sr-only">Scotty Braggins</figcaption>
           </figure>
