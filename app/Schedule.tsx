@@ -31,16 +31,8 @@ export default function Schedule() {
                     aria-hidden="true"
                     size={20}
                   />{" "}
-                  <span className="text-gray-900">Mon-Thu: 6:30 PM (Gi)</span>
-                </li>
-                <li className="flex items-center">
-                  <Clock
-                    className="mr-2 text-gray-900"
-                    aria-hidden="true"
-                    size={20}
-                  />{" "}
                   <span className="text-gray-900">
-                    Mon: 11:00 AM (Fundamentals Gi)
+                    Mon: 11:00 AM (Fundamentals Gi) & 6:30 PM (Gi)
                   </span>
                 </li>
                 <li className="flex items-center">
@@ -49,7 +41,7 @@ export default function Schedule() {
                     aria-hidden="true"
                     size={20}
                   />{" "}
-                  <span className="text-gray-900">Wed: 11:00 AM (Gi)</span>
+                  <span className="text-gray-900">Tue: 6:30 PM (Gi)</span>
                 </li>
                 <li className="flex items-center">
                   <Clock
@@ -57,7 +49,9 @@ export default function Schedule() {
                     aria-hidden="true"
                     size={20}
                   />{" "}
-                  <span className="text-gray-900">Fri: 11:00 AM (Gi)</span>
+                  <span className="text-gray-900">
+                    Wed: 11:00 AM (Gi) & 6:30 PM (Gi)
+                  </span>
                 </li>
                 <li className="flex items-center">
                   <Clock
@@ -65,7 +59,17 @@ export default function Schedule() {
                     aria-hidden="true"
                     size={20}
                   />{" "}
-                  <span className="text-gray-900">Fri: 6:00 PM (No-Gi)</span>
+                  <span className="text-gray-900">Thu: 6:30 PM (Gi)</span>
+                </li>
+                <li className="flex items-center">
+                  <Clock
+                    className="mr-2 text-gray-900"
+                    aria-hidden="true"
+                    size={20}
+                  />{" "}
+                  <span className="text-gray-900">
+                    Fri: 11:00 AM (Gi) & 6:00 PM (No-Gi)
+                  </span>
                 </li>
               </ul>
             </CardContent>
@@ -116,14 +120,6 @@ export default function Schedule() {
                   <span className="text-gray-900">
                     Thu: 4:00 PM, 5:00 PM (All Ages)
                   </span>
-                </li>
-                <li className="flex items-center">
-                  <Clock
-                    className="mr-2 text-gray-900"
-                    aria-hidden="true"
-                    size={20}
-                  />{" "}
-                  <span className="text-gray-900">Fri: 5:00 PM (All Ages)</span>
                 </li>
               </ul>
             </CardContent>
