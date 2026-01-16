@@ -1,0 +1,111 @@
+---
+import { Image } from "astro:assets";
+import scotty from "../assets/scotty.jpg";
+
+const qualifications = [
+  "Black Belt under Roger Gracie",
+  "15+ years of BJJ experience",
+  "Multiple-time competition champion",
+];
+
+
+---
+
+<section
+  id="instructor"
+  aria-labelledby="instructor-heading"
+  class="scroll-mt-16 py-24 relative overflow-hidden bg-white/40 organic-pattern"
+>
+  <div class="container mx-auto px-6 relative z-10">
+    <div
+      class="max-w-6xl mx-auto glass p-10 md:p-16 rounded-[4rem] border-white/60"
+    >
+      <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+        <div class="relative group shrink-0 w-64 md:w-80 h-64 md:h-80">
+          <div
+            class="absolute inset-0 bg-primary/20 rounded-full rotate-6 scale-105 group-hover:rotate-12 transition-transform duration-500"
+          >
+          </div>
+          <div
+            class="absolute inset-0 bg-secondary/20 rounded-full -rotate-6 scale-105 group-hover:-rotate-12 transition-transform duration-500"
+          >
+          </div>
+          <Image
+            src={scotty}
+            alt="Scotty Braggins"
+            width={400}
+            height={400}
+            class="relative rounded-full w-full h-full object-cover z-10 border-4 border-white shadow-2xl"
+          />
+          <div
+            class="absolute -bottom-4 -right-4 bg-primary text-primary-foreground px-6 py-2 rounded-full font-black tracking-widest text-xs z-20 shadow-xl"
+          >
+            BLACK BELT
+          </div>
+        </div>
+
+        <div class="flex-1 space-y-6">
+          <div>
+            <h2
+              id="instructor-heading"
+              class="text-primary font-bold uppercase tracking-widest text-sm mb-2"
+            >
+              Teacher & Mentor
+            </h2>
+            <h3
+              class="text-4xl md:text-5xl font-display font-black text-foreground mb-4"
+            >
+              Scotty <span class="text-primary italic">"The Bear"</span> Braggins
+            </h3>
+            <div class="w-16 h-1 bg-secondary rounded-full"></div>
+          </div>
+
+          <p
+            class="text-xl text-muted-foreground leading-relaxed font-body italic"
+          >
+            "Jiujitsu is about more than just fighting; it's about building
+            resilience and confidence through technical mastery."
+          </p>
+
+          <p class="text-lg text-muted-foreground leading-relaxed font-body">
+            Scotty is a highly respected black belt under the legendary <span
+              class="text-foreground font-bold italic">Roger Gracie</span
+            >. With over 15 years of dedicated practice, his approach blends
+            rigorous technical mastery with the serene, natural surrounding of
+            Aljezur.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6">
+            {
+              qualifications.map((q) => (
+                <div class="flex flex-col gap-2 p-4 rounded-2xl bg-white/40 border border-white/20">
+                  <div class="text-primary">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <>
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                        <polyline points="22 4 12 14.01 9 11.01" />
+                      </>
+                    </svg>
+                  </div>
+                  <span class="text-sm font-bold text-foreground leading-tight tracking-tight uppercase">
+                    {q}
+                  </span>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

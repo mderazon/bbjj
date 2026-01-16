@@ -1,0 +1,156 @@
+---
+const MailIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 text-gray-900"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>`;
+const MapPinIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 text-gray-900"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>`;
+const InstagramIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>`;
+const FacebookIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>`;
+const WhatsappIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 1 1-7.6-13.8 8.38 8.38 0 0 1 3.8.9L21 3.5Z"/></svg>`;
+---
+
+<section
+  id="contact"
+  aria-labelledby="contact-heading"
+  class="scroll-mt-16 py-24 bg-background relative overflow-hidden"
+>
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <h2
+        id="contact-heading"
+        class="text-4xl md:text-5xl font-display font-black mb-4"
+      >
+        Connect With <span class="text-primary italic">Our Academy</span>
+      </h2>
+      <p class="text-lg text-muted-foreground font-body">
+        Ready to start your journey? We're here to guide you.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+      <div class="glass p-8 md:p-12 rounded-[3rem] border-white/60 space-y-10">
+        <h3 class="text-3xl font-display font-black text-foreground">
+          Get in Touch
+        </h3>
+
+        <ul class="space-y-8" aria-label="Contact information">
+          <li class="flex items-start gap-5 group">
+            <div
+              class="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform"
+              set:html={WhatsappIcon}
+            />
+            <div>
+              <div
+                class="text-xs font-bold uppercase tracking-widest text-primary mb-1"
+              >
+                WhatsApp
+              </div>
+              <a
+                href="https://wa.me/351962772568"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-xl font-display font-bold text-foreground hover:text-primary transition-colors"
+                aria-label="Call us via WhatsApp at (+351) 962-772-568"
+              >
+                (+351) 962-772-568
+              </a>
+            </div>
+          </li>
+
+          <li class="flex items-start gap-5 group">
+            <div
+              class="w-12 h-12 rounded-2xl bg-secondary/10 text-secondary flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform"
+              set:html={MailIcon}
+            />
+            <div>
+              <div
+                class="text-xs font-bold uppercase tracking-widest text-secondary mb-1"
+              >
+                Email
+              </div>
+              <a
+                href="mailto:info@bearbonesjiujitsu.com"
+                class="text-xl font-display font-bold text-foreground hover:text-secondary transition-colors"
+                aria-label="Email us at info@bearbonesjiujitsu.com"
+              >
+                info@bearbonesjiujitsu.com
+              </a>
+            </div>
+          </li>
+
+          <li class="flex items-start gap-5 group">
+            <div
+              class="w-12 h-12 rounded-2xl bg-accent/10 text-accent flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform"
+              set:html={MapPinIcon}
+            />
+            <div>
+              <div
+                class="text-xs font-bold uppercase tracking-widest text-accent mb-1"
+              >
+                Location
+              </div>
+              <a
+                href="https://maps.app.goo.gl/vhi3uPFR1CyTpUNh8"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-xl font-display font-bold text-foreground hover:text-accent transition-colors leading-tight"
+                aria-label="Find us on Google Maps"
+              >
+                Rua 29 de Agosto, Loja S<br />
+                8670-113 Aljezur, Portugal
+              </a>
+            </div>
+          </li>
+        </ul>
+
+        <div class="pt-6 border-t border-primary/10">
+          <div
+            class="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-4"
+          >
+            Follow Survival
+          </div>
+          <div class="flex gap-4">
+            {
+              [
+                {
+                  icon: InstagramIcon,
+                  href: "https://instagram.com/bearbones_jiu_jitsu",
+                  label: "Instagram",
+                },
+                {
+                  icon: FacebookIcon,
+                  href: "https://facebook.com/bearbonesjiujitsu",
+                  label: "Facebook",
+                },
+              ].map((social) => (
+                <a
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-12 h-12 rounded-full bg-white border border-border shadow-sm flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground hover:-translate-y-1 transition-all duration-300"
+                  aria-label={`Visit our ${social.label} page`}
+                >
+                  <div set:html={social.icon} />
+                </a>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+
+      <div class="relative group">
+        <div
+          class="absolute inset-0 bg-primary/10 rounded-[3rem] rotate-2 scale-[1.02]"
+        >
+        </div>
+        <div
+          class="glass overflow-hidden h-[500px] lg:h-full rounded-[3rem] border-white/60 relative z-10 shadow-2xl"
+        >
+          <iframe
+            title="Map of Bear Bones Jiujitsu location"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6346.166116675269!2d-8.7945153!3d37.31686020000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1b15000fcdcf6d%3A0x8f0130e9d9a74903!2sBear%20Bones%20Jiujitsu!5e0!3m2!1sen!2sus!4v1736339573349!5m2!1sen!2sus"
+            class="w-full h-full border-0 grayscale hover:grayscale-0 transition-all duration-1000"
+            allowfullscreen
+            loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,38 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/logo.png";
+---
+
+<footer class="bg-foreground text-background py-16" role="contentinfo">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+      <div class="flex items-center gap-4">
+        <div
+          class="w-14 h-14 bg-white rounded-full flex items-center justify-center p-1 shadow-xl"
+        >
+          <Image
+            src={logo}
+            alt="BBJJ Logo"
+            width={56}
+            height={56}
+            class="w-full h-full object-contain"
+          />
+        </div>
+        <span class="font-display font-black text-2xl tracking-tighter"
+          >Bear Bones</span
+        >
+      </div>
+
+      <div class="text-center md:text-right">
+        <p class="text-background/60 font-body text-sm mb-2">
+          &copy; {new Date().getFullYear()} Bear Bones Jiujitsu.
+        </p>
+        <p
+          class="text-background/40 font-body text-xs uppercase tracking-widest font-black"
+        >
+          Made with love in sunny Aljezur ☀️
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
