@@ -6,11 +6,12 @@ const lang = getLangFromUrl(Astro.url);
 const translatePath = useTranslatedPath(lang);
 ---
 
-<div class="flex gap-2">
+<div class="flex gap-2 language-picker">
   {
     Object.keys(languages).map((langCode) => (
       <a
         href={translatePath("/", langCode)}
+        data-lang={langCode}
         class={`text-sm font-medium transition-colors hover:text-primary ${lang === langCode ? "text-primary font-bold" : "text-muted-foreground"}`}
       >
         {langCode.toUpperCase()}
@@ -18,3 +19,16 @@ const translatePath = useTranslatedPath(lang);
     ))
   }
 </div>
+
+<script>
+  const pickers = document.querySelectorAll(".language-picker");
+  pickers.forEach((picker) => {
+    picker.addEventListener("click", (e) => {
+      // @ts-ignore
+      const link = e.target.closest("a");
+      if (link && link.dataset.lang) {
+        localStorage.setItem("language", link.dataset.lang);
+      }
+    });
+  });
+</script>

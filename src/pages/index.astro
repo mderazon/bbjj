@@ -12,6 +12,17 @@ import Footer from "../components/Footer.astro";
 ---
 
 <Layout>
+  <script is:inline>
+    // Check for saved language preference or browser preference
+    const savedLang = localStorage.getItem("language");
+    const browserLang = navigator.language || navigator.userLanguage;
+
+    // Redirect to Portuguese if preferred and not already there
+    // This script only runs on the English (root) page
+    if (savedLang === "pt" || (!savedLang && browserLang?.startsWith("pt"))) {
+      window.location.replace("/pt/");
+    }
+  </script>
   <div class="min-h-screen">
     <Header />
     <main>
