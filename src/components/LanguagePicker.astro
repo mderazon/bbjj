@@ -1,0 +1,20 @@
+---
+import { languages } from "../i18n/ui";
+import { getLangFromUrl, useTranslatedPath } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
+---
+
+<div class="flex gap-2">
+  {
+    Object.keys(languages).map((langCode) => (
+      <a
+        href={translatePath("/", langCode)}
+        class={`text-sm font-medium transition-colors hover:text-primary ${lang === langCode ? "text-primary font-bold" : "text-muted-foreground"}`}
+      >
+        {langCode.toUpperCase()}
+      </a>
+    ))
+  }
+</div>

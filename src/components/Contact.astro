@@ -1,4 +1,9 @@
 ---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const MailIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 text-gray-900"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>`;
 const MapPinIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 text-gray-900"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>`;
 const InstagramIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>`;
@@ -17,17 +22,18 @@ const WhatsappIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height=
         id="contact-heading"
         class="text-4xl md:text-5xl font-display font-black mb-4"
       >
-        Connect With <span class="text-primary italic">Our Academy</span>
+        {t("contact.title.prefix")}
+        <span class="text-primary italic">{t("contact.title.highlight")}</span>
       </h2>
       <p class="text-lg text-muted-foreground font-body">
-        Ready to start your journey? We're here to guide you.
+        {t("contact.subtitle")}
       </p>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
       <div class="glass p-8 md:p-12 rounded-[3rem] border-white/60 space-y-10">
         <h3 class="text-3xl font-display font-black text-foreground">
-          Get in Touch
+          {t("contact.getInTouch")}
         </h3>
 
         <ul class="space-y-8" aria-label="Contact information">
@@ -40,7 +46,7 @@ const WhatsappIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height=
               <div
                 class="text-xs font-bold uppercase tracking-widest text-primary mb-1"
               >
-                WhatsApp
+                {t("contact.whatsapp")}
               </div>
               <a
                 href="https://wa.me/351962772568"
@@ -63,7 +69,7 @@ const WhatsappIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height=
               <div
                 class="text-xs font-bold uppercase tracking-widest text-[hsl(25,90%,35%)] mb-1"
               >
-                Email
+                {t("contact.email")}
               </div>
               <a
                 href="mailto:info@bearbonesjiujitsu.com"
@@ -84,7 +90,7 @@ const WhatsappIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height=
               <div
                 class="text-xs font-bold uppercase tracking-widest text-[hsl(175,90%,25%)] mb-1"
               >
-                Location
+                {t("contact.location")}
               </div>
               <a
                 href="https://maps.app.goo.gl/vhi3uPFR1CyTpUNh8"
@@ -104,7 +110,7 @@ const WhatsappIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height=
           <div
             class="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-4"
           >
-            Follow Bear Bones
+            {t("contact.followUs")}
           </div>
           <div class="flex gap-4">
             {

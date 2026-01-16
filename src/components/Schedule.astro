@@ -1,17 +1,22 @@
 ---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const adultsSchedule = [
-  "Mon: 11:00 AM (Fundamentals Gi) & 6:30 PM (Gi)",
-  "Tue: 6:30 PM (Gi)",
-  "Wed: 11:00 AM (Gi) & 6:30 PM (Gi)",
-  "Thu: 6:30 PM (Gi)",
-  "Fri: 11:00 AM (Gi) & 6:00 PM (No-Gi)",
+  `${t("schedule.mon")}: ${t("schedule.adults.mon")}`,
+  `${t("schedule.tue")}: ${t("schedule.adults.tue")}`,
+  `${t("schedule.wed")}: ${t("schedule.adults.wed")}`,
+  `${t("schedule.thu")}: ${t("schedule.adults.thu")}`,
+  `${t("schedule.fri")}: ${t("schedule.adults.fri")}`,
 ];
 
 const kidsSchedule = [
-  "Mon: 4:00 PM, 5:00 PM (All Ages)",
-  "Tue: 4:00 PM (5–9 years old), 5:00 PM (10+)",
-  "Wed: 5:30 PM (All Ages)",
-  "Thu: 4:00 PM, 5:00 PM (All Ages)",
+  `${t("schedule.mon")}: ${t("schedule.kids.mon")}`,
+  `${t("schedule.tue")}: ${t("schedule.kids.tue")}`,
+  `${t("schedule.wed")}: ${t("schedule.kids.wed")}`,
+  `${t("schedule.thu")}: ${t("schedule.kids.thu")}`,
 ];
 ---
 
@@ -26,10 +31,11 @@ const kidsSchedule = [
         id="schedule-heading"
         class="text-4xl md:text-5xl font-display font-black mb-4"
       >
-        Your Journey <span class="text-primary italic">Starts Here</span>
+        {t("schedule.title.prefix")}
+        <span class="text-primary italic">{t("schedule.title.highlight")}</span>
       </h2>
       <p class="text-lg text-muted-foreground font-body">
-        Consistent training for lasting results in Aljezur.
+        {t("schedule.subtitle")}
       </p>
     </div>
 
@@ -66,12 +72,12 @@ const kidsSchedule = [
             </div>
             <div>
               <h3 class="text-3xl font-display font-black text-foreground">
-                Adults Classes
+                {t("schedule.adults.title")}
               </h3>
               <p
                 class="text-primary font-bold uppercase tracking-widest text-xs mt-1"
               >
-                90 Minute Sessions
+                {t("schedule.adults.duration")}
               </p>
             </div>
           </div>
@@ -127,12 +133,12 @@ const kidsSchedule = [
             </div>
             <div>
               <h3 class="text-3xl font-display font-black text-foreground">
-                Little Bears
+                {t("schedule.kids.title")}
               </h3>
               <p
                 class="text-secondary font-bold uppercase tracking-widest text-xs mt-1"
               >
-                60 Minute Sessions
+                {t("schedule.kids.duration")}
               </p>
             </div>
           </div>

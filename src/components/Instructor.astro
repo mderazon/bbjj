@@ -1,14 +1,16 @@
 ---
 import { Image } from "astro:assets";
 import scotty from "../assets/scotty.jpg";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const qualifications = [
-  "Black Belt under Roger Gracie",
-  "15+ years of BJJ experience",
-  "Multiple-time competition champion",
+  t("instructor.qual.1"),
+  t("instructor.qual.2"),
+  t("instructor.qual.3"),
 ];
-
-
 ---
 
 <section
@@ -50,12 +52,16 @@ const qualifications = [
               id="instructor-heading"
               class="text-primary font-bold uppercase tracking-widest text-sm mb-2"
             >
-              Teacher & Mentor
+              {t("instructor.role")}
             </h2>
             <h3
               class="text-4xl md:text-5xl font-display font-black text-foreground mb-4"
             >
-              Scotty <span class="text-primary italic">"The Bear"</span> Braggins
+              {t("instructor.name.prefix")}
+              <span class="text-primary italic"
+                >{t("instructor.name.nickname")}</span
+              >
+              {t("instructor.name.suffix")}
             </h3>
             <div class="w-16 h-1 bg-secondary rounded-full"></div>
           </div>
@@ -63,16 +69,14 @@ const qualifications = [
           <p
             class="text-xl text-muted-foreground leading-relaxed font-body italic"
           >
-            "Jiujitsu is about more than just fighting; it's about building
-            resilience and confidence through technical mastery."
+            {t("instructor.quote")}
           </p>
 
           <p class="text-lg text-muted-foreground leading-relaxed font-body">
-            Scotty is a highly respected black belt under the legendary <span
-              class="text-foreground font-bold italic">Roger Gracie</span
-            >. With over 15 years of dedicated practice, his approach blends
-            rigorous technical mastery with the serene, natural surrounding of
-            Aljezur.
+            {t("instructor.bio.part1")}
+            <span class="text-foreground font-bold italic"
+              >{t("instructor.bio.highlight")}</span
+            >{t("instructor.bio.part2")}
           </p>
 
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6">

@@ -4,6 +4,10 @@ import academy1 from "../assets/academy1.jpg";
 import academy2 from "../assets/academy2.jpg";
 import academy3 from "../assets/academy3.jpg";
 import academy4 from "../assets/academy4.jpg";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const images = [
   { src: academy1, alt: "Training at Bear Bones" },
@@ -22,10 +26,12 @@ const images = [
         <h2
           class="text-4xl md:text-5xl font-display font-black text-foreground"
         >
-          Training at <span class="text-primary italic">The Academy</span>
+          {t("academy.title.prefix")}
+          <span class="text-primary italic">{t("academy.title.highlight")}</span
+          >
         </h2>
         <p class="text-lg text-muted-foreground mt-4 font-body">
-          Focused training and community-driven progress.
+          {t("academy.description")}
         </p>
       </div>
       <div class="hidden md:flex gap-2">

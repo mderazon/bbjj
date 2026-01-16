@@ -1,6 +1,10 @@
 ---
 import { Image } from "astro:assets";
 import logo from "../assets/logo.png";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <footer class="bg-foreground text-background py-16" role="contentinfo">
@@ -30,7 +34,7 @@ import logo from "../assets/logo.png";
         <p
           class="text-background/80 font-body text-xs uppercase tracking-widest font-black"
         >
-          Made with love in sunny Aljezur ☀️
+          {t("footer.madeWithLove")}
         </p>
       </div>
     </div>

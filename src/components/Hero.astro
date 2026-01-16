@@ -1,5 +1,8 @@
 ---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section
@@ -54,18 +57,19 @@
           ></span>
         </span>
         <span class="text-xs font-black uppercase tracking-[0.2em]"
-          >Aljezur's Premier Academy</span
+          >{t("hero.tagline")}</span
         >
       </div>
 
       <h1
         class="text-7xl md:text-9xl font-display font-black mb-8 text-foreground leading-[0.85] tracking-tighter"
       >
-        Bear Bones <br />
+        {t("hero.title.part1")}
+        <br />
         <span
           class="text-[0.75em] text-primary font-body font-black uppercase tracking-tight relative inline-block"
         >
-          Jiujitsu
+          {t("hero.title.part2")}
           <svg
             class="absolute -bottom-2 left-0 w-full h-4 text-secondary/30 -z-10"
             viewBox="0 0 100 20"
@@ -83,10 +87,7 @@
       <p
         class="text-xl md:text-2xl mb-12 text-muted-foreground font-body max-w-2xl mx-auto leading-relaxed text-balance"
       >
-        Master the fundamentals. Unleash your potential. <br
-          class="hidden md:block"
-        />
-        Join Aljezur's dedicated Jiujitsu community.
+        {t("hero.description")}
       </p>
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -98,7 +99,7 @@
             class="absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"
           >
           </div>
-          <span class="relative z-10">Start Free Trial</span>
+          <span class="relative z-10">{t("hero.cta.start")}</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="w-5 h-5 ml-2 relative z-10 group-hover:translate-x-1 transition-transform"
@@ -115,7 +116,7 @@
           href="#schedule"
           class="px-10 py-5 bg-white/40 backdrop-blur-xl border border-white/60 text-foreground font-black rounded-2xl hover:bg-white/80 hover:-translate-y-1.5 active:translate-y-0 shadow-lg shadow-black/5 transition-all duration-300 scroll-link uppercase tracking-widest text-sm"
         >
-          Class Schedule
+          {t("hero.cta.schedule")}
         </a>
       </div>
     </div>

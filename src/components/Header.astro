@@ -1,6 +1,20 @@
 ---
 import { Image } from "astro:assets";
 import logo from "../assets/logo.png";
+import LanguagePicker from "./LanguagePicker.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const navItems = [
+  { label: t("nav.home"), href: "#home" },
+  { label: t("nav.about"), href: "#about" },
+  { label: t("nav.testimonials"), href: "#testimonials" },
+  { label: t("nav.schedule"), href: "#schedule" },
+  { label: t("nav.instructor"), href: "#instructor" },
+  { label: t("nav.contact"), href: "#contact" },
+];
 ---
 
 <header
@@ -69,31 +83,27 @@ import logo from "../assets/logo.png";
         md:scale-100 md:opacity-100 md:pointer-events-auto"
     >
       {
-        [
-          "Home",
-          "About",
-          "Testimonials",
-          "Schedule",
-          "Instructor",
-          "Contact",
-        ].map((item) => (
+        navItems.map((item) => (
           <li>
             <a
-              href={`#${item.toLowerCase()}`}
+              href={item.href}
               class="block py-2 md:py-0 text-foreground/80 hover:text-primary text-sm font-semibold uppercase tracking-widest transition-colors duration-200 scroll-link"
             >
-              {item}
+              {item.label}
             </a>
           </li>
         ))
       }
-      <li>
+      <li class="flex items-center gap-4">
         <a
           href="#contact"
           class="inline-block px-5 py-2 bg-primary text-primary-foreground rounded-full text-sm font-bold shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all scroll-link"
         >
-          Free Trial
+          {t("nav.freeTrial")}
         </a>
+        <div class="md:ml-2">
+          <LanguagePicker />
+        </div>
       </li>
     </ul>
   </nav>

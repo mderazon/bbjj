@@ -1,16 +1,21 @@
 ---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const testimonials = [
   {
-    text: "Incredible Jiu-Jitsu training! The coach's detailed instruction and the well-structured classes are fantastic. Plus, it's the most welcoming and respectful academy I've ever been to.",
-    author: "Elena, Blue Belt",
+    text: t("testimonials.1.text"),
+    author: t("testimonials.1.author"),
   },
   {
-    text: "My son has thrived under Scotty's expert instruction and the supportive atmosphere. I highly recommend Bear Bones to any parent looking for a positive and enriching experience for their child.",
-    author: "Sunny, a happy mom",
+    text: t("testimonials.2.text"),
+    author: t("testimonials.2.author"),
   },
   {
-    text: "After 20 years in Jiu-Jitsu, across many countries and academies, Bear Bones is a rare diamond - my favorite, in fact. Scotty is the best instructor I've had. His attention to detail has rapidly improved my game. The kids' classes are also phenomenal. Highly recommended!",
-    author: "Leo, Purple Belt",
+    text: t("testimonials.3.text"),
+    author: t("testimonials.3.author"),
   },
 ];
 ---
@@ -20,17 +25,19 @@ const testimonials = [
   aria-labelledby="testimonials-heading"
   class="scroll-mt-16 py-24 relative overflow-hidden bg-background organic-pattern"
 >
-
   <div class="container mx-auto px-6 relative z-10">
     <div class="text-center max-w-2xl mx-auto mb-16">
       <h2
         id="testimonials-heading"
         class="text-4xl md:text-5xl font-display font-black mb-4"
       >
-        What Our Students <span class="text-primary italic">Say</span>
+        {t("testimonials.title.prefix")}
+        <span class="text-primary italic"
+          >{t("testimonials.title.highlight")}</span
+        >
       </h2>
       <p class="text-lg text-muted-foreground font-body">
-        Real stories of progress and discipline from our students in Aljezur.
+        {t("testimonials.subtitle")}
       </p>
     </div>
 
