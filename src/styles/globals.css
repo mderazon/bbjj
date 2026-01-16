@@ -3,8 +3,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --font-display: "Fraunces", serif;
-  --font-body: "Outfit", sans-serif;
+  --font-display: "Fraunces Variable", serif;
+  --font-body: "Outfit Variable", sans-serif;
 
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));

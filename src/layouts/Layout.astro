@@ -1,5 +1,7 @@
 ---
 import "../styles/globals.css";
+import "@fontsource-variable/fraunces";
+import "@fontsource-variable/outfit";
 
 interface Props {
   title?: string;
@@ -45,12 +47,9 @@ const {
     />
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Outfit:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
+    <style>
+      /* Font imports handled by Astro/Vite via direct import in frontmatter */
+    </style>
 
     <meta name="generator" content={Astro.generator} />
   </head>
