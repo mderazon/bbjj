@@ -2,7 +2,9 @@
   "name": "bearbonesjiujitsu",
   "compatibility_date": "2026-01-16",
   "compatibility_flags": ["nodejs_compat"],
-  "pages_build_output_dir": "./dist",
+  "routes": [
+    { "pattern": "bearbonesjiujitsu.com/*", "zone_id": "45eafc0efc32e620a03cafbaa47d784b" }
+  ],
   "observability": {
     "enabled": true,
   },
