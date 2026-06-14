@@ -58,6 +58,7 @@ const lang = getLangFromUrl(Astro.url);
       as="font"
       type="font/woff2"
       crossorigin="anonymous"
+      fetchpriority="high"
     />
     <link
       rel="preload"
@@ -65,10 +66,8 @@ const lang = getLangFromUrl(Astro.url);
       as="font"
       type="font/woff2"
       crossorigin="anonymous"
+      fetchpriority="high"
     />
-    <style>
-      /* Font imports handled by Astro/Vite via direct import in frontmatter */
-    </style>
 
     <meta name="generator" content={Astro.generator} />
   </head>
