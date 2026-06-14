@@ -4,26 +4,29 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
+    "minify:scripts": "esbuild src/scripts/*.ts --minify --outdir=public/scripts/ --format=iife",
+    "build": "npm run minify:scripts && astro build",
+    "preview": "npm run minify:scripts && astro preview",
     "astro": "astro",
-    "deploy": "astro build && wrangler pages deploy ./dist",
+    "deploy": "npm run minify:scripts && astro build && wrangler deploy",
     "check": "astro check",
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^12.6.12",
+    "@astrojs/cloudflare": "^13.7.0",
     "@fontsource-variable/fraunces": "^5.2.9",
     "@fontsource-variable/outfit": "^5.2.8",
-    "@tailwindcss/vite": "^4.1.18",
-    "astro": "^5.16.11",
-    "tailwindcss": "^4.1.18"
+    "@tailwindcss/vite": "^4.3.1",
+    "astro": "^6.4.6",
+    "lightningcss": "^1.32.0",
+    "tailwindcss": "^4.3.1"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.6",
-    "prettier": "^3.8.0",
+    "@astrojs/check": "^0.9.9",
+    "esbuild": "^0.28.1",
+    "prettier": "^3.8.4",
     "prettier-plugin-astro": "^0.14.1",
-    "typescript": "^5.9.3",
-    "wrangler": "^4.59.2"
+    "typescript": "^6.0.3",
+    "wrangler": "^4.100.0"
   }
 }
