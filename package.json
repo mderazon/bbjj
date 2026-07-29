@@ -4,11 +4,10 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "minify:scripts": "esbuild src/scripts/*.ts --minify --outdir=public/scripts/ --format=iife",
-    "build": "npm run minify:scripts && astro build",
-    "preview": "npm run minify:scripts && astro preview",
+    "build": "astro build",
+    "preview": "astro preview",
     "astro": "astro",
-    "deploy": "npm run minify:scripts && astro build && wrangler deploy",
+    "deploy": "astro build && wrangler deploy",
     "check": "astro check",
     "format": "prettier --write ."
   },
@@ -23,7 +22,6 @@
   },
   "devDependencies": {
     "@astrojs/check": "0.9.10",
-    "esbuild": "0.28.1",
     "prettier": "3.9.6",
     "prettier-plugin-astro": "0.14.1",
     "typescript": "6.0.3",
