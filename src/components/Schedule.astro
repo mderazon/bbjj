@@ -20,8 +20,9 @@ const kidsSchedule = [
 
 // Only mark classes that differ from the default 90 minutes:
 // beginner classes run 1 hour, so they get a subtle "· 1h" suffix.
+// ("Beginners" = EN, "Iniciantes" = PT)
 const classLine = (cls: string) =>
-  cls.includes("Beginners") ? `${cls} · 1h` : cls;
+  cls.includes("Beginners") || cls.includes("Iniciantes") ? `${cls} · 1h` : cls;
 ---
 
 <section
