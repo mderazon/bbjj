@@ -183,35 +183,22 @@ const navItems = [
       }
     });
 
+    // Native fragment links now handle the smooth scroll (CSS scroll-behavior);
+    // this just closes the mobile menu when a nav link is tapped.
     const scrollLinks = document.querySelectorAll(".scroll-link");
     scrollLinks.forEach((link) => {
-      link.addEventListener("click", (e) => {
-        e.preventDefault();
-        const targetId = link.getAttribute("href");
-        if (!targetId) return;
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          const offset = 100;
-          const elementPosition = targetElement.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth",
-          });
-
-          if (isMenuOpen && menu && menuButton) {
-            isMenuOpen = false;
-            menu.classList.add("scale-95", "opacity-0", "pointer-events-none");
-            menu.classList.remove(
-              "scale-100",
-              "opacity-100",
-              "pointer-events-auto",
-            );
-            if (menuIcon) {
-              menuIcon.innerHTML =
-                '<line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>';
-            }
+      link.addEventListener("click", () => {
+        if (isMenuOpen && menu && menuButton) {
+          isMenuOpen = false;
+          menu.classList.add("scale-95", "opacity-0", "pointer-events-none");
+          menu.classList.remove(
+            "scale-100",
+            "opacity-100",
+            "pointer-events-auto",
+          );
+          if (menuIcon) {
+            menuIcon.innerHTML =
+              '<line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>';
           }
         }
       });
