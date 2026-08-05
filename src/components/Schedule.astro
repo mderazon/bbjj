@@ -85,14 +85,19 @@ const kidsSchedule = [
             {
               adultsSchedule.map((time) => {
                 const [day, details] = time.split(": ");
+                const classes = details.split(/\s*[,&]\s*/).map((c) => c.trim());
                 return (
-                  <div class="flex items-center justify-between py-3 border-b border-primary/5 last:border-0 hover:bg-primary/5 transition-colors rounded-xl px-4 -mx-4">
-                    <span class="font-display font-black text-lg text-foreground w-12">
+                  <div class="flex items-start justify-between py-3 border-b border-primary/5 last:border-0 hover:bg-primary/5 transition-colors rounded-xl px-4 -mx-4">
+                    <span class="font-display font-black text-lg text-foreground w-12 pt-1">
                       {day}
                     </span>
-                    <span class="text-muted-foreground font-body text-right font-medium">
-                      {details}
-                    </span>
+                    <div class="text-muted-foreground font-body text-right font-medium space-y-1">
+                      {
+                        classes.map((cls) => (
+                          <div>{cls}</div>
+                        ))
+                      }
+                    </div>
                   </div>
                 );
               })
@@ -146,14 +151,19 @@ const kidsSchedule = [
             {
               kidsSchedule.map((time) => {
                 const [day, details] = time.split(": ");
+                const classes = details.split(/\s*[,&]\s*/).map((c) => c.trim());
                 return (
-                  <div class="flex items-center justify-between py-3 border-b border-secondary/5 last:border-0 hover:bg-secondary/5 transition-colors rounded-xl px-4 -mx-4">
-                    <span class="font-display font-black text-lg text-foreground w-12">
+                  <div class="flex items-start justify-between py-3 border-b border-secondary/5 last:border-0 hover:bg-secondary/5 transition-colors rounded-xl px-4 -mx-4">
+                    <span class="font-display font-black text-lg text-foreground w-12 pt-1">
                       {day}
                     </span>
-                    <span class="text-muted-foreground font-body text-right font-medium">
-                      {details}
-                    </span>
+                    <div class="text-muted-foreground font-body text-right font-medium space-y-1">
+                      {
+                        classes.map((cls) => (
+                          <div>{cls}</div>
+                        ))
+                      }
+                    </div>
                   </div>
                 );
               })

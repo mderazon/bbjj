@@ -68,7 +68,8 @@ export const ui = {
     "schedule.wed": "Wed",
     "schedule.thu": "Thu",
     "schedule.fri": "Fri",
-    "schedule.adults.mon": "11:00 AM (Fundamentals Gi) & 6:30 PM (Gi)",
+    "schedule.adults.mon":
+      "11:00 AM (Fundamentals Gi), 5:30 PM (Beginners/Fundamentals) & 6:30 PM (Gi)",
     "schedule.adults.tue": "6:30 PM (Gi)",
     "schedule.adults.wed":
       "11:00 AM (Gi), 5:30 PM (Beginners/Fundamentals) & 6:30 PM (Gi)",
@@ -163,7 +164,8 @@ export const ui = {
     "schedule.wed": "Qua",
     "schedule.thu": "Qui",
     "schedule.fri": "Sex",
-    "schedule.adults.mon": "11:00 (Fundamentals Gi) & 18:30 (Gi)",
+    "schedule.adults.mon":
+      "11:00 (Fundamentals Gi), 17:30 (Iniciantes/Fundamentals) & 18:30 (Gi)",
     "schedule.adults.tue": "18:30 (Gi)",
     "schedule.adults.wed":
       "11:00 (Gi), 17:30 (Iniciantes/Fundamentals) & 18:30 (Gi)",
