@@ -6,10 +6,13 @@
     // Fixes "[object Object]" SSR responses (withastro/astro#14511):
     // nodejs_process_v2 makes Astro misdetect Node, returning async-iterable
     // response bodies that Workerd cannot serialize.
-    "disable_nodejs_process_v2"
+    "disable_nodejs_process_v2",
   ],
   "routes": [
-    { "pattern": "bearbonesjiujitsu.com/*", "zone_id": "45eafc0efc32e620a03cafbaa47d784b" }
+    {
+      "pattern": "bearbonesjiujitsu.com/*",
+      "zone_id": "45eafc0efc32e620a03cafbaa47d784b",
+    },
   ],
   "observability": {
     "enabled": true,
